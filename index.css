@@ -16,9 +16,9 @@ img{
 }
 
 body{
-    background-color: var(--Light-Grayish-Blue);
+    background-color:hsl(240, 78%, 98%);
     font-size: 15px;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -29,12 +29,14 @@ body{
 }
 
 .wrapper{
-    background-color: var(--Very-Light-Grayish-Blue);
+    background-color: hsl(0, 0%, 99%);
     width: ;
     margin-top: 1.5rem;
     padding: 1rem;
     width: 370px;
     text-align: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 12px;
 }
 p{
     padding: .80rem;
@@ -64,16 +66,76 @@ h3{
     margin-right: 1rem;
     padding-right: 1.5em;
     padding-left: 1.5em;
+    font-size: 20px;
+    color: var(--Dark-Grayish-Blue);
 }
 .toggl-container h2{
     margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--Dark-Grayish-Blue);
 }
 .toggl-container{
     margin-top: 1rem;
     margin-bottom: 1.5rem;
     padding: 1.5rem;
     
+}
+.toggle-wrapper{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background-color: black;
+    top: 0px;
+}
+.toggle-wrapper input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(237, 63%, 64%);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: hsl(237, 63%, 64%);
+  }
+  input:focus + .slider {
+    box-shadow: 0 0 1px hsl(237, 63%, 64%);
+  }
+  input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  .slider.round {
+    border-radius: 34px;
+  }
+  .slider.round:before {
+    border-radius: 50%;
+  } 
+  .toggle-menue {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 .actionBtn{
     position: absolute;
